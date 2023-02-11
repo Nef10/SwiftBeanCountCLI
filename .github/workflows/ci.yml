@@ -35,6 +35,18 @@ jobs:
         os_matrix: ${{ steps.output_data.outputs.os_matrix }}
         coverage_os: ${{ steps.output_data.outputs.coverage_os }}
 
+  Debug:
+    name: Debug
+    needs: get_os
+    steps:
+    - name: Check output
+      id: check_output_data
+      run: |
+        echo "${{needs.get_os.outputs.os_matrix}}"
+        echo "needs.get_os.outputs.os_matrix"
+        echo "$needs.get_os.outputs.os_matrix"
+        echo "${{fromJson(needs.get_os.outputs.os_matrix)}}"
+
   test:
     name: Tests
     needs: get_os
