@@ -35,8 +35,9 @@ jobs:
         os_matrix: ${{ steps.output_data.outputs.os_matrix }}
         coverage_os: ${{ steps.output_data.outputs.coverage_os }}
 
-  Debug:
+  debug:
     name: Debug
+    runs-on: ubuntu-latest
     needs: get_os
     steps:
     - name: Check output
