@@ -25,10 +25,10 @@ jobs:
         fi
         if [ -e .github/macos_only ]
         then
-            echo "os_matrix=\"['$macos']\"" >> $GITHUB_OUTPUT
+            echo "os_matrix=['$macos']" >> $GITHUB_OUTPUT
             echo "coverage_os=$macos" >> $GITHUB_OUTPUT
         else
-            echo "os_matrix=\"['$macos', 'ubuntu-latest']\"" >> $GITHUB_OUTPUT
+            echo "os_matrix=['$macos', 'ubuntu-latest']" >> $GITHUB_OUTPUT
             echo "coverage_os=ubuntu-latest" >> $GITHUB_OUTPUT
         fi
     outputs:
@@ -45,7 +45,7 @@ jobs:
       run: |
         echo "needs.get_os.outputs.os_matrix"
         echo "$needs.get_os.outputs.os_matrix"
-        echo "${needs.get_os.outputs.os_matrix}}"
+        echo "${{needs.get_os.outputs.os_matrix}}"
 
   test:
     name: Tests
