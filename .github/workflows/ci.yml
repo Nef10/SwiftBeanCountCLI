@@ -43,7 +43,6 @@ jobs:
     - name: Check output
       id: check_output_data
       run: |
-        echo "${{needs.get_os.outputs.os_matrix}}"
         echo "needs.get_os.outputs.os_matrix"
         echo "$needs.get_os.outputs.os_matrix"
         echo "${{fromJson(needs.get_os.outputs.os_matrix)}}"
