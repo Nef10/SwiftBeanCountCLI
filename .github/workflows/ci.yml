@@ -45,7 +45,6 @@ jobs:
       run: |
         echo "needs.get_os.outputs.os_matrix"
         echo "$needs.get_os.outputs.os_matrix"
-        echo "${{fromJson(needs.get_os.outputs.os_matrix)}}"
 
   test:
     name: Tests
